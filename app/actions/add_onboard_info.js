@@ -2,13 +2,13 @@
 
 import { getDatabase } from "@/lib/mongodb";
 
-export async function addOnboardInfo(userId, country, intent) {
+export async function addOnboardInfo(userId, country, intent, nickname) {
     const db = await getDatabase();
     const users = db.collection("userData");
 
     const result = await users.updateOne(
         { "user": userId },
-        { $set: { "event_details.country": country, "event_details.intent": intent } }
+        { $set: { "event_details.country": country, "event_details.intent": intent, "event_details.nickname": nickname } }
     );
 
     return result;

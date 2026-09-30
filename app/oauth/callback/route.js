@@ -88,6 +88,7 @@ export async function GET(request) {
                         address: null,
                         event_details: {
                             pfp: slackData?.user?.profile?.image_original,
+                            nickname: slackData?.user?.profile?.display_name || "",
                             role: existingUser.event_details?.role || "Participant",
                             country: existingUser.event_details?.country || "",
                             projects: existingUser.event_details?.projects || [],
@@ -120,6 +121,7 @@ export async function GET(request) {
                     address: null,
                     event_details: {
                         pfp: slackData?.user?.profile?.image_original,
+                        nickname: slackData?.user?.profile?.display_name || "",
                         role: "Participant",
                         country: "",
                         projects: existingUser?.event_details?.projects || [],

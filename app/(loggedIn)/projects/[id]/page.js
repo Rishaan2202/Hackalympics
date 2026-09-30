@@ -1,7 +1,8 @@
 "use client"
 
 import React from 'react'
-import { fetchProject } from '../../../actions/fetchProject';
+import { fetchProject } from '../../../actions/fetch_project';
+import { deleteProject } from '../../../actions/delete_project';
 import Link from 'next/link';
 import '@/app/globals.css'
 
@@ -16,7 +17,9 @@ const page = async ({ params }) => {
   console.log("Type", typeof projectId);
   console.log("Project details:", project);
 
-  handleDelete = async () => {}
+  const handleDelete = async () => {
+    await deleteProject(projectId);
+  };
 
   if (!project) {
     return (
@@ -28,13 +31,20 @@ const page = async ({ params }) => {
   }
 
   return (
+    <>
+    <dialog className="absolute left-50 top-20">
+      <p>Are you sure you want to delete this project?</p>
+      <button onClick={handleDelete}>Yes, Delete</button>
+      <button onClick={() => {}}>No, Cancel</button>
+    </dialog>
     <div className="bg-[var(--tertiary)] rounded mr-3 p-2 absolute left-50 top-20">
       <h1 className='text-3xl font-bold m-2'>{project.name}</h1>
       <p className='m-2 text-black'>{project.description}</p>
       <Link href={project.demo} className='bg-[var(--secondary)] hover:bg-sky-600 m-2 text-white font-bold py-2 px-4 rounded'>Demo</Link>
       <Link href={project.code} className='bg-[var(--secondary)] hover:bg-sky-600 m-2 text-white font-bold py-2 px-4 rounded'>Code</Link>
-      <Link href={`/projects/${id}/delete`} className='bg-[var(--secondary)] hover:bg-sky-600 m-2 text-white font-bold py-2 px-4 rounded'>Delete</Link>
+      <Link onClick={handleDelete} className='bg-[var(--secondary)] hover:bg-sky-600 m-2 text-white font-bold py-2 px-4 rounded'>Delete</Link>
     </div>
+    </>
   )
 }
 

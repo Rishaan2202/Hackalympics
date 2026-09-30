@@ -14,6 +14,8 @@ const Onboarding = ({ params }) => {
     const [page, setPage] = useState(0)
     const [country, setCountry] = useState("")
     const [intent, setIntent] = useState("")
+    const [nickname, setNickname] = useState("")
+
 
     const { id } = use(params)
 
@@ -40,6 +42,20 @@ const Onboarding = ({ params }) => {
     } else if (page === 1) {
         return (
             <div className='fixed inset-0 grid place-items-center'>
+                <div className='flex flex-col items-center justify-centre bg-[var(--black)] text-[var(--blue)] w-fit p-3 rounded-lg'>
+                    <h1 className='text-5xl m-2'>What should we call You?</h1>
+                    <p className='text-xl text-[var(--red)]'>Tell us your Nickname!!!</p>
+                    <input type="text" placeholder="Enter your nickname..." className="bg-[var(--green)] text-black rounded m-2 p-2 text-xl" onChange={(e) => { setNickname(e.target.value) }} />
+                    <div className='flex'>
+                        <button className='bg-[var(--yellow)] w-[100px] text-black mt-4 m-2 p-2 rounded hover:bg-[var(--green)] hover:scale-[1.1] hover:cursor-pointer' onClick={() => setPage(0)}>← Previous</button>
+                        <button className='bg-[var(--yellow)] text-black mt-4 m-2 p-2 rounded hover:bg-[var(--green)] hover:scale-[1.1] hover:cursor-pointer' onClick={() => setPage(2)}>Next ➜</button>
+                    </div>
+                </div>
+            </div>
+        )
+    } else if (page === 2) {
+        return (
+            <div className='fixed inset-0 grid place-items-center'>
 
                 <dialog ref={modalRef} className=' left-1/2 top-4/5 transform -translate-x-1/2 -translate-y-1/2 bg-[var(--black)] text-[var(--red)] rounded-lg p-4'>
                     <div>
@@ -59,7 +75,7 @@ const Onboarding = ({ params }) => {
                         ))}
                     </select>
                     <div>
-                        <button className='bg-[var(--yellow)] w-[100px] text-black mt-4 m-2 p-2 rounded hover:bg-[var(--green)] hover:scale-[1.1] hover:cursor-pointer' onClick={() => setPage(0)}>← Previous</button>
+                        <button className='bg-[var(--yellow)] w-[100px] text-black mt-4 m-2 p-2 rounded hover:bg-[var(--green)] hover:scale-[1.1] hover:cursor-pointer' onClick={() => setPage(1)}>← Previous</button>
                         <button id='countryNext' className='bg-[var(--yellow)] w-[100px] text-black mt-4 m-2 p-2 rounded hover:bg-[var(--green)] hover:scale-[1.1] hover:cursor-pointer' onClick={() => {
                             if (country === "") {
                                 showError()
@@ -67,7 +83,7 @@ const Onboarding = ({ params }) => {
                                     hideError()
                                 }, 1000)
                             } else {
-                                setPage(2)
+                                setPage(3)
                             }
                         }
                         }>Next →</button>
@@ -75,7 +91,7 @@ const Onboarding = ({ params }) => {
                 </div>
             </div >
         )
-    } else if (page === 2) {
+    } else if (page === 3) {
         return (
             <div className='fixed inset-0 grid place-items-center'>
                 <div className='flex flex-col items-center justify-centre bg-[var(--black)] text-[var(--blue)] w-fit p-3 rounded-lg'>
@@ -87,23 +103,23 @@ const Onboarding = ({ params }) => {
                         <option value="shop">Shop</option>
                         <option value="exploring">Exploring</option>
                     </select>
-                    <div className = 'flex'>
-                        <button className='bg-[var(--yellow)] w-[100px] text-black mt-4 m-2 p-2 rounded hover:bg-[var(--green)] hover:scale-[1.1] hover:cursor-pointer' onClick={() => setPage(1)}>← Previous</button>
-                        <button className='bg-[var(--yellow)] w-[100px] text-black mt-4 m-2 p-2 rounded hover:bg-[var(--green)] hover:scale-[1.1] hover:cursor-pointer' onClick={() => setPage(3)}>Next →</button>
+                    <div className='flex'>
+                        <button className='bg-[var(--yellow)] w-[100px] text-black mt-4 m-2 p-2 rounded hover:bg-[var(--green)] hover:scale-[1.1] hover:cursor-pointer' onClick={() => setPage(2)}>← Previous</button>
+                        <button className='bg-[var(--yellow)] w-[100px] text-black mt-4 m-2 p-2 rounded hover:bg-[var(--green)] hover:scale-[1.1] hover:cursor-pointer' onClick={() => setPage(4)}>Next →</button>
                     </div>
                 </div>
             </div>
         )
-    } else if (page === 3) {
+    } else if (page === 4) {
         return (
             <div className='fixed inset-0 grid place-items-center'>
                 <div className='flex flex-col items-center justify-centre bg-[var(--black)] text-[var(--blue)] w-fit p-3 rounded-lg'>
                     <h1 className='text-5xl m-2'>Thanks!</h1>
                     <p className='text-xl text-[var(--red)]'>Great! Now you'll be making projects and earn points for {country}!</p>
                     <div>
-                        <button className='bg-[var(--yellow)] w-[100px] text-black mt-4 m-2 p-2 rounded hover:bg-[var(--green)] hover:scale-[1.1] hover:cursor-pointer' onClick={() => setPage(2)}>← Previous</button>
+                        <button className='bg-[var(--yellow)] w-[100px] text-black mt-4 m-2 p-2 rounded hover:bg-[var(--green)] hover:scale-[1.1] hover:cursor-pointer' onClick={() => setPage(3)}>← Previous</button>
                         <button className='bg-[var(--yellow)] w-[120px] text-black mt-4 m-2 p-2 rounded hover:bg-[var(--green)] hover:scale-[1.1] hover:cursor-pointer' onClick={() => {
-                            addOnboardInfo(id, country, intent);
+                            addOnboardInfo(id, country, intent, nickname);
                             router.push('/home');
                         }}>Start Building</button>
                     </div>

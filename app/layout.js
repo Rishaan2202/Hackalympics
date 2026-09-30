@@ -6,7 +6,7 @@ import { Mansalva } from "next/font/google";
 const mansalva = Mansalva({ subsets: ["latin"], display: "swap", weight: "400" }); 
 
 export const metadata = {
-  title: "Basic Next App",
+  title: "Hackalympics",
   description: "This is a basic NEXT.js app",
 };
 

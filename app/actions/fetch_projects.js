@@ -1,11 +1,9 @@
-"use server"
+    'use server'
 
-import { getDatabase } from "@/lib/mongodb";
+    import { getDatabase } from "@/lib/mongodb";
 
-export async function FetchProjects() {
-
-    const db = await getDatabase();
-    const projects = await db.collection("userData").find({}, { projection: { "_id": 0, "hackatime_data.data.projects": 1 } }).toArray();
-
-    return projects;
-}
+    export default async function fetchProjects() {
+        const db = await getDatabase();
+        const projects = await db.collection("userData").find({}, { projection: { "_id": 0, "event_details.projects": 1 } }).toArray();
+        return projects;
+    }
