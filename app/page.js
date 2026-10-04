@@ -20,7 +20,7 @@ export default function Page() {
     </Link>
 
     <Image
-      src='https://cdn.hackclub.com/01a0e2cf-921b-7f07-aa8e-0ca1ec226504/IMG_0204.jpeg'
+      src='https://cdn.hackclub.com/01a0e821-fe77-7fc8-a16f-c7dd6c5cd97b/IMG_0208.jpeg'
       alt='PCB Image'
       width={250}
       height={200}
