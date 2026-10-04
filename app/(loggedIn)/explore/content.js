@@ -12,7 +12,8 @@ export default function ExplorePage({projects}) {
     const searchText = text.toLowerCase();
     const filteredProjects = projects.filter((user) => {
       const projectName = user.name?.toLowerCase() || "";
-      return projectName.includes(searchText);
+      const projectUser = user.username?.toLowerCase() || "";  
+      return projectName.includes(searchText) || projectUser.includes(searchText);
     });
     setProjectArray(filteredProjects);
   }
