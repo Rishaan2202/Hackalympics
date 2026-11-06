@@ -80,7 +80,7 @@ const CreateProject = () => {
         const fetchProjects = async () => {
             try {
                 const projectsData = await FetchProjects();
-                const projectDataArray = projectsData?.hackatime_data?.[0]?.data?.projects || [];
+                const projectDataArray = projectsData?.[0]?.hackatime_data?.[0]?.data?.projects || [];
                 console.log("Projects fetched successfully:", projectDataArray);
                 setProjects(projectDataArray);
             } catch (error) {
