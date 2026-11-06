@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchProject } from '@/app/actions/fetch_project_by_id';
+import { fetchProjects } from '@/app/actions/fetch_project_by_id';
 import { deleteProject } from '@/app/actions/delete_project';
 import { Identify } from '@/app/actions/identify_user';
 import Delete from './delete';
