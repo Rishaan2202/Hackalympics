@@ -69,6 +69,23 @@ You can access the website here:
 <img width="2360" height="1520" alt="image" src="https://github.com/user-attachments/assets/78bf5b49-8aae-4981-8829-8b975c2fbad0" />
 <br>
 <br>
+<h2>The stack:</h2>
+<br>
+<ul>
+  <li>Next.js</li>
+  <li>Javascript</li>
+  <li>TailwindCSS</li>
+</ul>
+<br>
+<br>
+<h2>Outro</h2>
 <h3>
 P.S I also have some pages as a thanks after buying a shop item and stuff, overall I really liked this project and this taught me many things on the way! See ya soon!!! Contact me on slack for assistance, myself @Rishaan!
 </h3>
+<br>
+<br>
+<h2>Licence</h2>
+<h3>
+This project is licensed under the MIT licence and is fully open source, feel free to copy anything ;)
+</h3>
+
