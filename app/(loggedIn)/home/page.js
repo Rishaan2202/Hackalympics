@@ -48,7 +48,7 @@ export default async function Home() {
               </li>
             ))}
             <li>
-              <Link href={`/projects/create`} className="text-[var(--red)] hover:scale-[1.05] flex flex-col items-center justify-center border-2 border-dashed m-2 h-[94%] p-2 rounded w-[13vw]">
+              <Link href={`/projects/create`} className="text-[var(--red)] hover:scale-[1.05] flex flex-col items-center justify-center border-2 border-dashed m-2 h-[40vh] p-2 rounded w-[13vw]">
                 <h1 className='text-8xl'>+</h1>
                 <h2 className="font-bold text-xl flex justify-center">Create Project</h2>
               </Link>
