@@ -29,7 +29,7 @@ export default async function Home() {
       <div id='homeProjectsArea' className='bg-[var(--black)] m-2 p-2 w-[80vw] rounded h-[58vh] text-[var(--blue)]'>
         <h2 className='text-3xl m-2 font-bold text-[var(--yellow)]'>My Projects</h2>
         {!myProjects || myProjects.length === 0 ? (
-          <Link href={`/projects/create`} className="text-[var(--primary)] hover:scale-[1.05] flex flex-col items-center justify-center border-2 border-dashed m-2 h-[94%] p-2 rounded text-black w-[13vw]">
+          <Link href={`/projects/create`} className="text-[var(--primary)] hover:scale-[1.05] flex flex-col items-center justify-center border-2 border-dashed m-2 h-[40vh] p-2 rounded text-black w-[13vw]">
             <h1 className='text-8xl'>+</h1>
             <h2 className="font-bold text-xl flex justify-center">Create Project</h2>
           </Link>
