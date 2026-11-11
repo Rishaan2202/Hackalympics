@@ -61,7 +61,7 @@ You can access the website here:
 <br>
 <h3>Explore the projects built by other people on the explore page!</h3>
 <br>
-<img width="2360" height="1522" alt="image" src="https://github.com/yuser-attachments/assets/30bc36c1-b664-44ec-b362-5a15bfb1c020" />
+<img width="2360" height="1522" alt="image" src="https://github.com/user-attachments/assets/95be89c6-6cb1-4d6a-bc20-15d9263488f5" />
 <br>
 <br>
 <h3>Here's the part I worked the most on this whole time, Project Creation:</h3>
